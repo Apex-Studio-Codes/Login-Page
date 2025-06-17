@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +8,22 @@
     <title>Account Login</title>
 </head>
 <body>
-    <div class="theme-switch">
-        <button id="themeToggle">
-            <span class="theme-icon">🌙</span>
+    <div class="theme-switch" aria-label="Theme toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
         </button>
     </div>
     <main>
         <div class="login-container">
             <h2>Login</h2>
-            <div id="messageBox" class="message"></div>
+            <div id="messageBox" class="message" role="alert"></div>
             <form id="loginForm">
                 <div class="form-group">
+                    <label for="username" class="visually-hidden">Username</label>
                     <input type="text" id="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
+                    <label for="password" class="visually-hidden">Password</label>
                     <input type="password" id="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="login-btn">Login</button>

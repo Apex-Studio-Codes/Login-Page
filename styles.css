@@ -1,3 +1,21 @@
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --container-bg: white;
+    --input-border: #ddd;
+    --button-bg: #1877f2;
+    --button-text: white;
+}
+
+[data-theme="dark"] {
+    --bg-color: #18191a;
+    --text-color: #f0f2f5;
+    --container-bg: #242526;
+    --input-border: #3a3b3c;
+    --button-bg: #2374e1;
+    --button-text: white;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -5,12 +23,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
 }
 
 .login-container {
-    background-color: white;
+    background-color: var(--container-bg);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -25,16 +44,18 @@ body {
 input {
     width: 90%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--input-border);
     border-radius: 4px;
     font-size: 1rem;
+    background-color: var(--container-bg);
+    color: var(--text-color);
 }
 
 .login-btn {
     width: 100%;
     padding: 0.75rem;
-    background-color: #1877f2;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -49,7 +70,7 @@ input {
 .signup-btn {
     background: none;
     border: none;
-    color: #1877f2;
+    color: var(--button-bg);
     cursor: pointer;
     font-weight: bold;
 }
@@ -57,7 +78,7 @@ input {
 h2{
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--text-color);
     font-size: 1.5rem;
 }
 
@@ -112,4 +133,21 @@ footer {
     background-color: #e8f5e9;
     color: #2e7d32;
     display: block;
+}
+
+.theme-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--container-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

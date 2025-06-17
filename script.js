@@ -90,3 +90,22 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 if (sessionStorage.getItem('loggedIn')) {
     window.location.href = 'dashboard.html';
 }
+
+// Theme switching functionality
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.querySelector('.theme-icon');
+
+function setTheme(isDark) {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkTheme', isDark);
+}
+
+// Check for saved theme preference
+const prefersDark = localStorage.getItem('darkTheme') === 'true';
+setTheme(prefersDark);
+
+themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'dark';
+    setTheme(isDark);
+});

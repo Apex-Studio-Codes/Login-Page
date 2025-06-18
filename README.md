@@ -31,6 +31,9 @@ Loginpage/
 2. Open `index.html` in a modern web browser
 
 ## Usage
+1. When downloaded, edit `index.html` where `dashboard.html` is link in order to change the destination of where the login page takes you
+2. Install the backend dependancies in order to run with a Php or SQL Database for User storing
+3. This `README.md` can be deleted but is recommended to keep incase any support is needed
 
 ### Login
 - Enter your username and password
